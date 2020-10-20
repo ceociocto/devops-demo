@@ -18,7 +18,7 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  private handleError(error: any) {
+  private handleError(error: any): Observable<never> {
     console.error(error);
     return throwError(error);
   }
