@@ -1,6 +1,6 @@
 <div class="card-container">
   <div class="card">
-    <h2>{{user.name}}</h2>
+    <h2 *ngIf="user.name">{{user.name}}</h2>
     <p *ngIf="!editMode">{{user.contact}}</p>
     <input type="text" *ngIf="editMode" (focusout)="updateUser(user)" (keydown.enter)='$event.target.blur()'
       [(ngModel)]='user.contact' (focusout)="editMode=false" />

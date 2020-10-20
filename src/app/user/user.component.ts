@@ -1,7 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { User } from './user';
-import { UserData } from './user-data';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
