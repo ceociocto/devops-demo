@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+$primary: #4800be;
+
+html, body {
+  margin: 0;
+}
+
+.container {
+  padding: 1rem 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background: $primary;
+  padding: 1rem;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+nav {
+  ul {
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+    li a {
+      padding: 1rem;
+      &:hover {
+        background: darken($primary, 10%)
+      }
+    }
+  }
+}
+
+button {
+  &:not(:last-child) {
+    margin-right: .5rem;
+  }
+  &[type="primary"] {
+    background: $primary;
+    color: #fff;
+  }
+}

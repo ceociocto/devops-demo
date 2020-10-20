@@ -1,1 +1,13 @@
-<p>user works!</p>
+<div class="card-container">
+  <div class="card">
+    <h2 *ngIf="user.name">{{user.name}}</h2>
+    <p *ngIf="!editMode">{{user.contact}}</p>
+    <input type="text" *ngIf="editMode" (focusout)="updateUser(user)" (keydown.enter)='$event.target.blur()'
+      [(ngModel)]='user.contact' (focusout)="editMode=false" />
+    <div class="action-bar">
+      <button *ngIf="!editMode" type="primary" (click)="editMode=true">Modify</button>
+      <button *ngIf="editMode" type="primary" (click)="editMode=false;updateUser(user)">Save</button>
+      <button (click)="deleteUser(user.id)">Remove</button>
+    </div>
+  </div>
+</div>

@@ -1,15 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { User } from './user';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']
 })
-export class UserComponent implements OnInit {
+export class UserComponent {
+  editMode: boolean;
+
+  @Input()
+  user: User;
+
+  @Output() updateEvent = new EventEmitter<User>();
+
+  @Output() deleteEvent = new EventEmitter<number>();
 
   constructor() { }
 
-  ngOnInit(): void {
+  updateUser(user: User): void {
+    this.updateEvent.emit(
+      user
+    );
+  }
+
+  deleteUser(id: number): void {
+    this.deleteEvent.emit(id);
   }
 
 }
