@@ -3,7 +3,7 @@ import { User } from './user';
 
 
 export class UserData implements InMemoryDbService {
-  createDb() {
+  createDb(): any {
     const users: User[] = [
       { id: 1, name: 'Tom', email: 'tom@gmail.com', role: 'admin', department: 'HR', contact: '0000000000' },
       { id: 2, name: 'Jerry', email: 'jerry@gmail.com', role: 'manager', department: 'HR', contact: '1111111111' },
